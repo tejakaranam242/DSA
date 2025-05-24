@@ -1,12 +1,17 @@
 class Solution {
-    public List<Integer> findWordsContaining(String[] words, char x) {
-        List<Integer> res = new ArrayList<Integer>();
-        for(int i=0;i<words.length;i++){
-           String word = words[i];
-           if(word.indexOf(x)!=-1){
-            res.add(i);
-           }
+    public static int sumSubstrings(String s) {
+        // code here
+        int sum = 0;
+        int n = s.length();
+
+        for (int i = 0; i < n; i++) {
+            String sub = "";
+            for (int j = i; j < n; j++) {
+                sub += s.charAt(j);
+                sum += Integer.parseInt(sub);
+            }
         }
-        return res;
+
+        return sum;
     }
 }
